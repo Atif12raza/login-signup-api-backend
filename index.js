@@ -20,10 +20,10 @@ mongoose.connection.on("error", (error) => {
   console.log(error);
 });
 
-// SIGNUP endpoint
+
 app.post("/api/signup", async (req, res) => {
   try {
-    console.log("Signup request body:", req.body); // 👈 LOG INPUT
+    console.log("Signup request body:", req.body); 
 
     const { firstName, lastName, email, password } = req.body;
 
@@ -50,7 +50,7 @@ app.post("/api/signup", async (req, res) => {
     });
 
   } catch (err) {
-    console.error("Signup error:", err); // 👈 PRINT ERROR TO TERMINAL
+    console.error("Signup error:", err);
     return res.status(500).json({
       message: "A server error has occurred",
       error: err.message,
@@ -59,7 +59,6 @@ app.post("/api/signup", async (req, res) => {
 });
 
 
-// LOGIN endpoint
 app.post("/api/login", async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -88,3 +87,5 @@ app.post("/api/login", async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+
